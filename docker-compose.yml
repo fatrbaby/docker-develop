@@ -1,0 +1,13 @@
+php:
+  image: 'fatrbaby/php'
+  volumes:
+    - '/usr/local/var/www/app/public:/app:rw'
+nginx:
+  image: 'fatrbaby/nginx'
+  ports:
+    - '8080:80'
+  links:
+    - 'php:php-fpm'
+  volumes:
+    - '/usr/local/var/www/app/public:/app:rw'
+
