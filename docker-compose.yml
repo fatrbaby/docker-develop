@@ -5,7 +5,7 @@ php:
 nginx:
   image: 'fatrbaby/nginx'
   ports:
-    - '8080:80'
+    - '8090:80'
   links:
     - 'php:php-fpm'
   volumes:
