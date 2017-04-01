@@ -10,4 +10,13 @@ nginx:
     - 'php:php-fpm'
   volumes:
     - '/usr/local/var/www/app/public:/app:rw'
-
+redis:
+  images: 'fatrbaby/redis'
+  ports:
+    - '6379:6379'
+mysql:
+  images: 'fatrbaby/mysql'
+  ports:
+    - '3306:3306'
+  volumes:
+    - '/usr/local/var/mysql/data:/var/mysql/data:rw'
