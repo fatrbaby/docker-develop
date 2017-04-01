@@ -1,9 +1,11 @@
 php:
   image: 'fatrbaby/php7'
+  container_name: php
   volumes:
     - '/usr/local/var/www/app/public:/app:rw'
 nginx:
   image: 'fatrbaby/nginx'
+  container_name: nginx
   ports:
     - '8090:80'
   links:
@@ -12,11 +14,16 @@ nginx:
     - '/usr/local/var/www/app/public:/app:rw'
 redis:
   images: 'fatrbaby/redis'
+  container: redis
   ports:
     - '6379:6379'
 mysql:
   images: 'fatrbaby/mysql'
+  container_name: mysql
   ports:
     - '3306:3306'
   volumes:
     - '/usr/local/var/mysql/data:/var/mysql/data:rw'
+  environment:
+    MYSQL_ROOT_PASSWORD: 123456
+    TZ: Asia/Chongqing
