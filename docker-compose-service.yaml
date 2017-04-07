@@ -2,6 +2,7 @@ version: '3'
 services:
   fluentd:
     image: fluent/fluentd:v0.14
+    container_name: fluentd
     ports:
       - '24224:24224'
       - '24224:24224/udp'
@@ -9,4 +10,4 @@ services:
       - '/usr/local/var/fluentd:/fluentd/log'
       - './etc/fluentd:/fluentd/etc'
     environment:
-      FLUENTD_CONF: fluentd.confßßß
+      FLUENTD_CONF: fluentd.conf
