@@ -8,6 +8,6 @@ services:
       - '24224:24224/udp'
     volumes:
       - '/usr/local/var/fluentd:/fluentd/log'
-      - './etc/fluentd:/fluentd/etc'
-    environment:
-      FLUENTD_CONF: fluentd.conf
+      #- './etc/fluentd:/fluentd/etc'
+    #environment:
+      #FLUENTD_CONF: fluentd.conf
