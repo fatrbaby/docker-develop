@@ -1,7 +1,7 @@
 version: '2'
 services:
   php:
-    build: './images/php'
+    image: 'php:70-fpm'
     container_name: php
     volumes:
       - '/usr/local/var/www/app/public:/app:rw'
@@ -9,7 +9,7 @@ services:
     image: 'nginx:alpine'
     container_name: nginx
     ports:
-      - '8090:80'
+      - '80:80'
     links:
       - 'php:php-fpm'
     volumes:
