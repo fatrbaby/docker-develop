@@ -1,11 +1,15 @@
-version: 3
+version: "3"
 services:
   registry:
     image: registry
-    containser_name: registry
-    restart: always
-    volumns:
-      - "/var/local/var/registry:/var/lib/registry"
+    container_name: registry
+    #restart: always
+    volumes:
+      - "/usr/local/var/registry:/var/lib/registry"
       - "./etc/registry/config.yml:/etc/docker/registry/config.yml"
     ports:
       - "5000:5000"
+networks: 
+  default:
+    external:
+      name: dockerdevelop_default
